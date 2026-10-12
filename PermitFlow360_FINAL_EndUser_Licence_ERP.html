@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PermitFlow 360 — Permit & Licence Freelancer ERP</title>
+<style>
+:root{--nav:#111a30;--blue:#3157d5;--blue2:#eaf0ff;--bg:#f5f7fb;--card:#fff;--text:#172033;--muted:#687386;--line:#e2e7ef;--green:#148b64;--greenbg:#e7f7f0;--amber:#c47b0c;--amberbg:#fff4dd;--red:#cf4053;--redbg:#fdecef;--shadow:0 8px 24px #17233b10}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px Segoe UI,Arial,sans-serif}.app{display:flex;min-height:100vh}.side{position:fixed;width:245px;inset:0 auto 0 0;background:var(--nav);color:#fff;padding:18px 12px;z-index:5}.brand{font-size:21px;font-weight:800;padding:8px 10px 2px}.brand i{color:#91a8ff;font-style:normal}.tag{font-size:11px;color:#aab5cf;padding:4px 10px 18px}.nav button{display:block;width:100%;border:0;background:transparent;color:#cbd4e8;text-align:left;padding:10px 12px;border-radius:8px;margin:2px 0}.nav button:hover,.nav button.active{background:#26365f;color:#fff}.nav .group{font-size:10px;color:#7583a3;text-transform:uppercase;padding:15px 10px 5px}.main{margin-left:245px;width:calc(100% - 245px);padding:25px 30px 60px}.top{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:18px}.crumb{font-size:12px;color:var(--muted)}h1{font-size:26px;margin:3px 0}h2{font-size:19px;margin:0 0 4px}h3{font-size:14px;margin:0 0 6px}.muted{color:var(--muted);font-size:12px}.page{display:none}.page.active{display:block}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}.grid{display:grid;gap:14px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.metric{font-size:27px;font-weight:800;margin-top:7px}.metric.green{color:var(--green)}.metric.amber{color:var(--amber)}.metric.red{color:var(--red)}.label{font-size:10px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.05em}.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 13px;font-weight:650;color:var(--text);cursor:pointer}.btn:hover{filter:brightness(.98)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.green{background:var(--green);border-color:var(--green);color:#fff}.btn.sm{padding:6px 9px;font-size:12px}.btn:disabled{opacity:.45;cursor:not-allowed}.actions{display:flex;gap:8px;justify-content:flex-end;margin-top:15px}.hero{background:linear-gradient(120deg,#edf2ff,#fff);border:1px solid #dce4ff;border-radius:13px;padding:21px;margin-bottom:15px}.notice{border-radius:9px;padding:11px 13px;font-size:12px;background:var(--amberbg);border:1px solid #f0dcae;color:#77520d}.success{background:var(--greenbg);border:1px solid #c9ecdd;color:#126a4e}.danger{background:var(--redbg);border:1px solid #f3c8cf;color:#a52f40}.formgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.field label{display:block;font-size:11px;font-weight:750;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:9px;border:1px solid #d7dde7;border-radius:8px;background:#fff;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #3157d510}.full{grid-column:1/-1}.pill{display:inline-block;padding:4px 8px;border-radius:99px;background:#eef1f6;color:#526078;font-size:10px;font-weight:750}.pill.blue{background:var(--blue2);color:#3157d5}.pill.green{background:var(--greenbg);color:#087653}.pill.amber{background:var(--amberbg);color:#a36507}.pill.red{background:var(--redbg);color:#bd3548}.stepper{display:flex;margin:16px 0 20px}.step{flex:1;text-align:center;font-size:10px;font-weight:750;color:#8a94a7;position:relative}.step:before{content:"";display:block;margin:auto auto 5px;width:24px;height:24px;border-radius:50%;background:#e5e9f0}.step:after{content:"";height:2px;background:#e5e9f0;position:absolute;top:11px;left:50%;width:100%;z-index:-1}.step:last-child:after{display:none}.step.done,.step.current{color:var(--blue)}.step.done:before,.step.current:before{background:var(--blue)}.step.done:before{content:"✓";color:#fff;line-height:24px}.question{padding:13px;border:1px solid var(--line);border-radius:9px;margin:9px 0}.q{font-weight:700}.answers{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}.answer{border:1px solid var(--line);background:#fafbfc;padding:7px 12px;border-radius:7px;cursor:pointer;font-size:12px}.answer.selected{border-color:#91a4ee;background:var(--blue2);color:#2948b5;font-weight:700}.check{display:flex;gap:9px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--line)}.check input{accent-color:var(--blue)}.check .status{margin-left:auto}.barbg{height:8px;background:#edf0f5;border-radius:10px;overflow:hidden}.bar{height:100%;background:var(--blue);width:0}.sample{cursor:pointer;transition:.15s}.sample:hover{transform:translateY(-2px);border-color:#9db0f2}.sample.selected{border:2px solid var(--blue);padding:16px}.sample .title{font-weight:800}.sample .mini{font-size:11px;color:var(--muted);margin-top:5px}.table{width:100%;border-collapse:collapse;font-size:12px}.table th,.table td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.table th{font-size:10px;text-transform:uppercase;color:var(--muted)}.timeline{border-left:2px solid #dbe1ed;padding-left:17px}.event{margin:0 0 17px;position:relative}.event:before{content:"";position:absolute;left:-23px;top:4px;width:8px;height:8px;border-radius:50%;background:var(--blue)}.modal{display:none;position:fixed;inset:0;background:#0d1629a8;align-items:center;justify-content:center;z-index:20;padding:20px}.modal.show{display:flex}.modalbox{width:min(850px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:13px;padding:20px}.toast{position:fixed;right:20px;bottom:20px;background:#172033;color:#fff;padding:11px 14px;border-radius:8px;display:none;z-index:30}.toast.show{display:block}.hide{display:none!important}
+@media(max-width:950px){.side{width:205px}.main{margin-left:205px;width:calc(100% - 205px);padding:20px}.g4,.g3{grid-template-columns:repeat(2,1fr)}.formgrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.side{position:static;width:100%}.app{display:block}.main{margin:0;width:100%}.g4,.g3,.g2,.formgrid{grid-template-columns:1fr}.top{display:block}.top .btn{margin-top:10px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+ <div class="brand">Permit<i>Flow</i> 360</div><div class="tag">Permit & Licence Freelancer ERP</div>
+ <div class="nav">
+  <button data-page="dashboard" class="active">⌂ Dashboard</button>
+  <button data-page="newcase">＋ New Customer / Case</button>
+  <button data-page="cases">▣ My Cases</button>
+  <button data-page="customers">👥 Customers</button>
+  <div class="group">Case Work</div>
+  <button data-page="documents">▤ Documents</button><button data-page="tracking">↗ Government Tracking</button><button data-page="licences">✓ Licences</button><button data-page="calendar">◷ Due Dates</button>
+  <div class="group">Master & Design</div>
+  <button data-page="catalog">▦ Industry / State Catalogue</button><button data-page="services">⚙ Licence Services</button><button data-page="erp">⌘ ERP Design</button>
+ </div>
+</aside>
+<main class="main">
+<header class="top"><div><div class="crumb">PermitFlow 360 / <span id="crumb">Dashboard</span></div><h1 id="title">Freelancer Dashboard</h1></div><button class="btn primary" onclick="openNewCase()">＋ New Customer / Case</button></header>
+
+<section id="dashboard" class="page active">
+ <div class="hero"><h2>Start with the customer's business — not the licence.</h2><p class="muted">Choose Industry/Business + State + District. PermitFlow then shows the services that may apply to that business and location.</p><div class="actions" style="justify-content:flex-start"><button class="btn primary" onclick="openNewCase()">Start New Customer Case</button><button class="btn" onclick="go('catalog')">Explore Industry / State Samples</button></div></div>
+ <div class="notice success" style="margin-bottom:15px"><b>Official reference model:</b> India NSWS KYA is designed to identify indicative approvals from business inputs; its own guidance says users must independently verify requirements with the relevant authorities. <a href="https://www.nsws.gov.in/" target="_blank" rel="noopener">Open NSWS ↗</a> · <a href="https://foscos.fssai.gov.in/" target="_blank" rel="noopener">Open FoSCoS ↗</a></div><div class="grid g4"><div class="card"><div class="label">Customers</div><div class="metric">18</div></div><div class="card"><div class="label">Open Cases</div><div class="metric">27</div></div><div class="card"><div class="label">Government Queries</div><div class="metric amber">4</div></div><div class="card"><div class="label">Renewals ≤ 30 Days</div><div class="metric red">3</div></div></div>
+ <div class="grid g2" style="margin-top:15px"><div class="card"><h3>Today's cases</h3><table class="table"><tr><td><b>ABC Auto Components</b><br><span class="muted">Karnataka · Factory Licence</span></td><td><span class="pill amber">Inspection</span></td></tr><tr><td><b>GreenLeaf Foods</b><br><span class="muted">Tamil Nadu · FSSAI</span></td><td><span class="pill red">Query</span></td></tr><tr><td><b>Sunrise Warehouse</b><br><span class="muted">Maharashtra · Fire NOC</span></td><td><span class="pill blue">Documents</span></td></tr></table></div>
+ <div class="card"><h3>Freelancer workflow</h3><div class="timeline"><div class="event"><b>Customer / Business</b><br><span class="muted">Industry + state + site</span></div><div class="event"><b>What may apply?</b><br><span class="muted">Guided questions</span></div><div class="event"><b>Get documents</b><br><span class="muted">Customer checklist</span></div><div class="event"><b>Apply & track</b><br><span class="muted">Government reference</span></div><div class="event"><b>Licence & renew</b><br><span class="muted">Validity + conditions</span></div></div></div></div>
+</section>
+
+<section id="newcase" class="page">
+ <div id="newIntro" class="hero"><h2>New Customer / Licence Case</h2><p class="muted">Step 1 — tell PermitFlow what the business actually does and where it operates.</p></div>
+ <div class="stepper"><div id="st1" class="step current">Business</div><div id="st2" class="step">Services</div><div id="st3" class="step">Questions</div><div id="st4" class="step">Documents</div><div id="st5" class="step">Application</div><div id="st6" class="step">Track</div></div>
+ <div id="businessStep" class="card">
+  <h2>1. Business / Customer Profile</h2><p class="muted">This selection drives the rest of the case.</p>
+  <div class="formgrid" style="margin-top:15px">
+   <div class="field"><label>Customer / Business Name *</label><input id="customerName" placeholder="e.g. ABC Auto Components Pvt Ltd"></div>
+   <div class="field"><label>Business / Industry *</label><select id="industry"></select></div>
+   <div class="field"><label>State *</label><select id="state"></select></div>
+   <div class="field"><label>District *</label><select id="district"></select></div>
+   <div class="field"><label>Business Activity *</label><select id="activity"></select></div>
+   <div class="field"><label>Business Type</label><select id="biztype"><option>Private Limited</option><option>Partnership</option><option>Proprietorship</option><option>LLP</option><option>Public Limited</option><option>Trust / Society</option></select></div>
+   <div class="field full"><label>Site / Premises Address *</label><textarea id="site" rows="2" placeholder="Factory / shop / restaurant / warehouse / project address"></textarea></div>
+   <div class="field"><label>Contact Person</label><input id="contact" placeholder="Customer contact"></div>
+   <div class="field"><label>Employees / Workers</label><input id="employees" type="number" placeholder="e.g. 80"></div>
+   <div class="field"><label>Annual Turnover Band</label><select><option>Below ₹1 Cr</option><option>₹1–10 Cr</option><option>₹10–50 Cr</option><option>Above ₹50 Cr</option></select></div>
+  </div>
+  <div id="businessHint" class="notice" style="margin-top:13px">Select industry, state and activity to load the relevant licence catalogue.</div>
+  <div class="actions"><button class="btn primary" onclick="loadServices()">Find Applicable Services →</button></div>
+ </div>
+
+ <div id="serviceStep" class="card hide">
+  <div class="top"><div><h2>2. Services for this Business + State</h2><p class="muted" id="serviceContext"></p></div><button class="btn" onclick="backToBusiness()">← Change Business</button></div>
+  <div class="notice" style="margin-bottom:12px">These are configured service examples. Actual applicability must be verified against the relevant authority and current rules before submission.</div>
+  <div id="serviceCards" class="grid g3"></div>
+  <div id="chosenService" class="card hide" style="margin-top:14px;background:#f9fbff"></div>
+  <div class="actions"><button class="btn primary" id="toQuestions" disabled onclick="loadQuestions()">Continue → Applicability Questions</button></div>
+ </div>
+
+ <div id="questionStep" class="card hide">
+  <div class="top"><div><h2>3. Guided Applicability</h2><p class="muted" id="questionContext"></p></div><button class="btn" onclick="backToServices()">← Services</button></div>
+  <div id="questionList"></div>
+  <div id="answerNote" class="notice">Answer all questions to continue.</div>
+  <div class="actions"><button class="btn primary" onclick="evaluateRequirements()">What documents & steps apply? →</button></div>
+ </div>
+
+ <div id="documentStep" class="card hide">
+  <div class="top"><div><h2>4. Customer Document Checklist</h2><p class="muted" id="docContext"></p></div><button class="btn" onclick="backToQuestions()">← Questions</button></div>
+  <div id="resultBox"></div><div id="docChecklist"></div>
+  <div style="margin-top:14px"><div class="label">Application readiness</div><div class="barbg"><div id="readinessBar" class="bar"></div></div><div id="readinessText" class="muted" style="margin-top:4px"></div></div>
+  <div class="actions"><button class="btn" onclick="requestDocs()">Request Missing Documents</button><button class="btn primary" onclick="prepareApplication()">Prepare Application →</button></div>
+ </div>
+
+ <div id="applicationStep" class="card hide">
+  <div class="top"><div><h2>5. Prepare Government Application</h2><p class="muted">Customer and service data is carried forward automatically.</p></div><button class="btn" onclick="backToDocuments()">← Documents</button></div>
+  <div id="applicationSummary" class="grid g3" style="margin:12px 0"></div>
+  <div class="formgrid">
+   <div class="field"><label>Application Type</label><select id="appType"><option>New</option><option>Renewal</option><option>Amendment</option><option>Transfer</option></select></div>
+   <div class="field"><label>Responsible / Occupier</label><input id="responsible"></div>
+   <div class="field"><label>Government Authority</label><input id="authority"></div>
+   <div class="field"><label>Workers / Capacity</label><input id="capacity"></div>
+   <div class="field"><label>Proposed / Renewal Date</label><input id="proposedDate" type="date"></div>
+   <div class="field"><label>Government Fee (if known)</label><input id="fee" placeholder="Enter after verification"></div>
+   <div class="field full"><label>Application Notes</label><textarea id="appNotes" rows="3"></textarea></div>
+  </div>
+  <div id="validationBox" style="margin-top:12px"></div>
+  <div class="actions"><button class="btn primary" onclick="validateApplication()">Validate Application →</button></div>
+ </div>
+
+ <div id="trackStep" class="card hide">
+  <div class="top"><div><h2>6. Government Submission & Tracking</h2><p class="muted">The actual portal login/OTP/CAPTCHA/payment stays with the freelancer unless an official API is available.</p></div></div>
+  <div class="grid g2">
+   <div class="card"><h3>Submission Pack</h3><p class="muted">Application + checklist + customer documents + declarations.</p><button class="btn" onclick="toast('Submission pack prepared for this case')">Prepare Submission Pack</button></div>
+   <div class="card"><h3 id="portalTitle">Official Government Portal</h3><p class="muted" id="portalText"></p><button class="btn primary" onclick="openPortal()">Open Official Portal ↗</button></div>
+  </div>
+  <div class="formgrid" style="margin-top:14px">
+   <div class="field"><label>Government Application / Reference No.</label><input id="govRef" placeholder="Enter after government submission"></div>
+   <div class="field"><label>Submitted Date</label><input id="submittedDate" type="date"></div>
+   <div class="field"><label>Portal Status</label><select id="portalStatus"><option>Submitted</option><option>Under Scrutiny</option><option>Query Raised</option><option>Inspection Scheduled</option><option>Inspection Completed</option><option>Approved</option><option>Rejected</option></select></div>
+  </div>
+  <div class="actions"><button class="btn green" onclick="saveTracking()">Save Government Tracking</button></div>
+  <div id="trackingResult" style="margin-top:12px"></div>
+ </div>
+</section>
+
+<section id="cases" class="page"><div class="card"><div class="top"><div><h2>My Cases</h2><p class="muted">Cases created in this session plus sample cases.</p></div><button class="btn primary" onclick="openNewCase()">＋ New Case</button></div><table class="table"><thead><tr><th>Customer</th><th>Industry / State</th><th>Service</th><th>Stage</th><th>Next Action</th><th></th></tr></thead><tbody id="caseRows"></tbody></table></div></section>
+
+<section id="customers" class="page"><div class="card"><div class="top"><div><h2>Customers</h2><p class="muted">Customer master with linked licence work.</p></div><button class="btn primary" onclick="openNewCase()">＋ New Customer</button></div><table class="table"><thead><tr><th>Customer</th><th>Industry</th><th>State</th><th>Cases</th><th>Status</th><th></th></tr></thead><tbody id="customerRows"></tbody></table></div></section>
+
+<section id="documents" class="page">
+ <div class="hero">
+  <div class="top" style="margin:0">
+   <div><h2>Document Workspace</h2><p class="muted">Every document is linked to Customer → Licence Service → Application. Nothing is just a loose file.</p></div>
+   <button class="btn primary" onclick="requestDocs()">Request Missing Documents</button>
+  </div>
+ </div>
+ <div class="grid g4">
+  <div class="card"><div class="label">Total Required</div><div class="metric">42</div></div>
+  <div class="card"><div class="label">Received</div><div class="metric green">29</div></div>
+  <div class="card"><div class="label">Pending</div><div class="metric amber">10</div></div>
+  <div class="card"><div class="label">Query / Replace</div><div class="metric red">3</div></div>
+ </div>
+ <div class="card" style="margin-top:15px">
+  <div class="top">
+   <div><h2>Linked Document Register</h2><p class="muted">Use filters to find the document for a particular customer or licence.</p></div>
+   <div style="display:flex;gap:7px">
+    <select id="docFilterState" class="btn" onchange="filterDocs()"><option value="">All States</option><option>Karnataka</option><option>Tamil Nadu</option><option>Maharashtra</option><option>Telangana</option></select>
+    <select id="docFilterStatus" class="btn" onchange="filterDocs()"><option value="">All Status</option><option>Received</option><option>Pending</option><option>Query / Replace</option></select>
+   </div>
+  </div>
+  <div id="documentRegister"></div>
+ </div>
+</section>
+
+<section id="tracking" class="page"><div class="grid g3"><div class="card"><div class="label">Submitted</div><div class="metric">9</div></div><div class="card"><div class="label">Queries</div><div class="metric amber">4</div></div><div class="card"><div class="label">Inspections</div><div class="metric">3</div></div></div><div class="card" style="margin-top:14px"><h2>Government Applications</h2><table class="table"><thead><tr><th>Customer</th><th>Service</th><th>Reference</th><th>Status</th><th>Next Action</th></tr></thead><tbody id="trackingRows"></tbody></table></div></section>
+
+<section id="licences" class="page"><div class="card"><h2>Licence Register</h2><p class="muted">Approved permits with validity, capacity and conditions.</p><table class="table"><thead><tr><th>Licence</th><th>Customer</th><th>State</th><th>Valid Until</th><th>Status</th><th></th></tr></thead><tbody id="licenceRows"></tbody></table></div></section>
+
+<section id="calendar" class="page"><div class="grid g3"><div class="card"><span class="pill red">12 days</span><h3 style="margin-top:12px">FSSAI Renewal</h3><p class="muted">GreenLeaf Foods · Tamil Nadu</p></div><div class="card"><span class="pill amber">18 days</span><h3 style="margin-top:12px">Factory Query</h3><p class="muted">ABC Auto Components · Karnataka</p></div><div class="card"><span class="pill blue">32 days</span><h3 style="margin-top:12px">Fire Inspection</h3><p class="muted">Sunrise Warehouse · Maharashtra</p></div></div></section>
+
+<section id="catalog" class="page">
+ <div class="hero"><h2>Industry + State Catalogue</h2><p class="muted">This is the core configuration concept: the same business may face different authorities, portals, documents and workflows depending on the state and activity.</p></div>
+ <div class="grid g4" id="catalogCards"></div>
+ <div class="card" style="margin-top:15px"><h2>Try a sample</h2><p class="muted">Click any sample to load it directly into the New Customer / Case wizard.</p><div id="samples" class="grid g3" style="margin-top:12px"></div></div>
+</section>
+
+<section id="services" class="page"><div class="card"><h2>Licence Service Configuration</h2><p class="muted">Each service template stores its questions, document checklist, authority, process, validity and official portal reference.</p><table class="table"><thead><tr><th>Service</th><th>Industry</th><th>State</th><th>Authority</th><th>Documents</th><th>Workflow</th></tr></thead><tbody id="serviceMasterRows"></tbody></table></div></section>
+
+<section id="erp" class="page">
+ <div class="hero"><h2>ERP Functional Design</h2><p class="muted">End users see business language. Functional consultants can map the same workflow to ERP records underneath.</p></div>
+ <div class="grid g3"><div class="card"><h3>Business Profile</h3><p class="muted">Customer, industry, activity, state, district, site, workers, capacity, materials, equipment.</p></div><div class="card"><h3>Licence Service</h3><p class="muted">Service, industry, state, authority, applicability questions, documents, process, portal, validity.</p></div><div class="card"><h3>Applicability Assessment</h3><p class="muted">Question, answer, rule, result, reason, source/version, reviewer.</p></div><div class="card"><h3>Application</h3><p class="muted">Customer, service, authority, application type, reference, stage, fee, dates, owner.</p></div><div class="card"><h3>Government Submission</h3><p class="muted">Portal, URL, reference number, submission date, status, acknowledgement, sync method.</p></div><div class="card"><h3>Licence + Conditions</h3><p class="muted">Licence number, licence type, authority, issue/expiry, approved capacity, workers, HP, conditions, returns, renewal lead, amendment history, surrender/closure.</p></div></div>
+
+<div class="card" style="margin-top:15px">
+ <div class="top"><div><h2>Licence Master — Functional Record</h2><p class="muted">This is the master record behind every end-user licence case.</p></div>
+ <button class="btn primary" onclick="openLicenceMaster()">Open Licence Master</button></div>
+ <div class="grid g4">
+  <div><div class="label">Licence Type</div><b>Factory Licence</b></div>
+  <div><div class="label">Industry</div><b>Manufacturing</b></div>
+  <div><div class="label">Jurisdiction</div><b>State + District</b></div>
+  <div><div class="label">Lifecycle</div><b>New → Active → Renewal</b></div>
+ </div>
+ <div class="notice" style="margin-top:12px">The master controls which questions, documents, authority, portal, fees, validity, conditions, inspection and renewal actions appear to the freelancer.</div>
+</div>
+</section>
+</main></div>
+
+<div id="modal" class="modal"><div id="modalBox" class="modalbox"></div></div><div id="toast" class="toast"></div>
+<script>
+const DATA={
+industries:{
+"Manufacturing":["Auto Components","Engineering Products","Packaging","Textile","Chemical Manufacturing","Food Manufacturing","Pharmaceutical Manufacturing"],
+"Food & Restaurant":["Restaurant / Café","Food Processing","Bakery","Cloud Kitchen","Food Retail"],
+"Construction":["Building Construction","Infrastructure Project","Commercial Building","Residential Project"],
+"Warehouse & Logistics":["Warehouse","Cold Storage","Logistics / Transport","3PL Warehouse"],
+"Mining & Minerals":["Quarry","Stone / Aggregate","Mineral Processing","Mining Project"],
+"Retail & Commercial":["Retail Store","Shopping Complex","Office / Commercial Building"]
+},
+states:{
+"Karnataka":["Bengaluru Urban","Bengaluru Rural","Mysuru","Tumakuru","Hosur-border operations"],
+"Tamil Nadu":["Chennai","Coimbatore","Hosur / Krishnagiri","Salem","Madurai"],
+"Maharashtra":["Mumbai","Pune","Nashik","Nagpur","Thane"],
+"Telangana":["Hyderabad","Rangareddy","Medchal","Warangal"],
+"Kerala":["Ernakulam","Thiruvananthapuram","Kozhikode","Thrissur"],
+"Andhra Pradesh":["Visakhapatnam","Vijayawada","Tirupati","Guntur"]
+},
+activities:{
+"Auto Components":["Metal component manufacturing","Machining / fabrication","Surface treatment","Assembly"],
+"Engineering Products":["Machine manufacturing","Fabrication","Industrial equipment"],
+"Packaging":["Plastic packaging","Flexible packaging","Paper packaging"],
+"Textile":["Garment manufacturing","Textile processing","Dyeing / finishing"],
+"Chemical Manufacturing":["Chemical formulation","Industrial chemicals","Specialty chemicals"],
+"Food Manufacturing":["Food processing","Packaged food","Beverage manufacturing"],
+"Pharmaceutical Manufacturing":["Formulation","API / bulk drugs","Medical products"],
+"Restaurant / Café":["Restaurant","Café","Cloud kitchen"],
+"Food Processing":["Food processing","Cold / prepared foods"],
+"Bakery":["Bakery production","Retail bakery"],
+"Cloud Kitchen":["Delivery food preparation"],
+"Food Retail":["Grocery / food retail"],
+"Building Construction":["Residential","Commercial","Mixed use"],
+"Infrastructure Project":["Road","Industrial infrastructure","Civil project"],
+"Commercial Building":["Office","Shopping / commercial"],
+"Residential Project":["Apartment / housing"],
+"Warehouse":["General warehouse","Industrial warehouse"],
+"Cold Storage":["Cold storage","Frozen storage"],
+"Logistics / Transport":["Transport operator","Fleet / logistics"],
+"3PL Warehouse":["Third-party logistics"],
+"Quarry":["Stone quarry","Blue metal / aggregate"],
+"Stone / Aggregate":["Crushing / screening","Aggregate production"],
+"Mineral Processing":["Mineral processing"],
+"Mining Project":["Mining activity"],
+"Retail Store":["Retail shop","Showroom"],
+"Shopping Complex":["Commercial mall","Shopping complex"],
+"Office / Commercial Building":["Office","Commercial premises"]
+},
+services:[
+{industry:"Manufacturing",activity:"Auto Components",service:"Factory Licence",authority:"State Factory / Labour Authority",portal:"State factory / labour portal",docs:["Company / identity documents","Site / building plan","Factory layout","Machinery & power details","Occupier details","Worker details","Manufacturing process","Declarations"],qs:[["Is manufacturing carried out at the premises?",["Yes","No"]],["Power-driven machinery used?",["Yes","No"]],["Installed power?",["Below 10 HP","10–50 HP","Above 50 HP"]],["Workers?",["Below 10","10–50","Above 50"]],["Hazardous process?",["Yes","No"]],["Boiler / pressure equipment?",["Yes","No"]],["Contract labour?",["Yes","No"]]]},
+{industry:"Manufacturing",activity:"Packaging",service:"Factory Licence",authority:"State Factory / Labour Authority",portal:"State factory / labour portal",docs:["Company documents","Factory plan","Machinery list","Power details","Occupier details","Worker details","Process flow","Declarations"],qs:[["Will production machinery be used?",["Yes","No"]],["Workers?",["Below 10","10–50","Above 50"]],["Installed power?",["Below 10 HP","10–50 HP","Above 50 HP"]],["Is printing / solvent process involved?",["Yes","No"]],["Is hazardous material used?",["Yes","No"]],["Multiple shifts?",["Yes","No"]]]},
+{industry:"Food & Restaurant",activity:"Restaurant / Café",service:"FSSAI Licence",authority:"FSSAI / State Food Safety Authority",portal:"FoSCoS",docs:["Business proof","Premises proof","Food activity details","Food category details","Responsible person ID","Water / hygiene details","Photograph / declaration"],qs:[["Is food prepared or sold?",["Yes","No"]],["Is this a restaurant / café?",["Yes","No"]],["Food prepared on site?",["Yes","No"]],["Turnover band?",["Small","Medium","Large"]],["Multiple outlets?",["Yes","No"]],["Food stored on site?",["Yes","No"]]]},
+{industry:"Food & Restaurant",activity:"Food Processing",service:"FSSAI Licence",authority:"FSSAI / State Food Safety Authority",portal:"FoSCoS",docs:["Business proof","Premises proof","Manufacturing activity","Food categories","Water details","Responsible person","Food safety documents","Declaration"],qs:[["Is food manufactured / processed?",["Yes","No"]],["Is food stored at premises?",["Yes","No"]],["Turnover / scale?",["Small","Medium","Large"]],["Is water used in processing?",["Yes","No"]],["Multiple products?",["Yes","No"]]]},
+{industry:"Construction",activity:"Building Construction",service:"Building / Local Development Approval",authority:"Local / Urban Development Authority",portal:"Relevant local authority portal",docs:["Ownership / lease proof","Site plan","Building plan","Architect / engineer details","Project details","Structural documents","Declarations"],qs:[["New construction?",["Yes","No"]],["Number of floors?",["1–2","3–5","6+"]],["Commercial or residential?",["Commercial","Residential","Mixed"]],["Built-up area?",["Small","Medium","Large"]],["Basement?",["Yes","No"]]]},
+{industry:"Construction",activity:"Infrastructure Project",service:"Project / Environmental Permissions Review",authority:"Applicable State / Central Authorities",portal:"Applicable authority portal",docs:["Project report","Land / site details","Project layout","Capacity details","Environmental information","Authority forms"],qs:[["Is this a new project?",["Yes","No"]],["Project scale?",["Small","Medium","Large"]],["Land acquisition involved?",["Yes","No"]],["Water / discharge impact?",["Yes","No"]],["Waste generation expected?",["Yes","No"]]]},
+{industry:"Warehouse & Logistics",activity:"Warehouse",service:"Fire NOC",authority:"Fire & Emergency Services",portal:"State / local fire portal",docs:["Building plan","Occupancy details","Fire equipment details","Emergency exits","Electrical / safety documents","Owner / occupier proof"],qs:[["Public / employee occupancy?",["Yes","No"]],["Floors?",["1–2","3–5","6+"]],["Built-up area?",["Below 5,000 sq.ft","5,000–20,000","Above 20,000"]],["Flammable storage?",["Yes","No"]],["Fire system installed?",["Yes","No"]]]},
+{industry:"Mining & Minerals",activity:"Quarry",service:"Mining / Quarry Permit Review",authority:"State Mines & Geology Authority",portal:"State mining / e-permit portal",docs:["Land / lease details","Site plan","Mineral details","Production capacity","Environmental documents","Applicant identity","Declarations"],qs:[["Is mineral extraction proposed?",["Yes","No"]],["Private or government land?",["Private","Government","Lease"]],["Extraction scale?",["Small","Medium","Large"]],["Blasting proposed?",["Yes","No"]],["Water / environmental impact?",["Yes","No"]]]},
+{industry:"Pharmaceutical Manufacturing",activity:"Pharmaceutical Manufacturing",service:"Drug Manufacturing Licence",authority:"State Drug Control Authority",portal:"State drug control portal",docs:["Manufacturing premises details","Plant layout","Technical staff details","Equipment list","Product details","Quality documents","Company documents"],qs:[["Manufacturing medicines?",["Yes","No"]],["Dedicated manufacturing premises?",["Yes","No"]],["Technical qualified staff available?",["Yes","No"]],["Sterile / special category?",["Yes","No"]],["Multiple dosage forms?",["Yes","No"]]]},
+{industry:"Retail & Commercial",activity:"Retail Store",service:"Trade / Local Business Licence Review",authority:"Municipal / Local Authority",portal:"Local authority portal",docs:["Business proof","Premises proof","Owner ID","Site details","Activity details","Declaration"],qs:[["Customer-facing retail activity?",["Yes","No"]],["Signage installed?",["Yes","No"]],["Food sold?",["Yes","No"]],["Employees?",["Below 10","10–50","Above 50"]]]}
+],
+samples:[
+["ABC Auto Components","Manufacturing","Auto Components","Karnataka","Bengaluru Rural","Metal component manufacturing"],
+["Sri Lakshmi Packaging","Manufacturing","Packaging","Tamil Nadu","Krishnagiri","Flexible packaging"],
+["GreenLeaf Foods","Food & Restaurant","Restaurant / Café","Karnataka","Bengaluru Urban","Restaurant"],
+["FreshBite Foods","Food & Restaurant","Food Processing","Tamil Nadu","Coimbatore","Food processing"],
+["Sunrise Warehouse","Warehouse & Logistics","Warehouse","Maharashtra","Pune","Industrial warehouse"],
+["MetroBuild Projects","Construction","Building Construction","Telangana","Hyderabad","Commercial"],
+["Deccan Quarry","Mining & Minerals","Quarry","Karnataka","Tumakuru","Stone quarry"],
+["MediCore Labs","Pharmaceutical Manufacturing","Pharmaceutical Manufacturing","Maharashtra","Pune","Formulation"],
+["CityMart Retail","Retail & Commercial","Retail Store","Kerala","Ernakulam","Retail shop"],
+["Eastern Engineering","Manufacturing","Engineering Products","Telangana","Medchal","Industrial equipment"]
+]
+};
+
+let CASES=[
+{customer:"ABC Auto Components",industry:"Manufacturing",activity:"Auto Components",state:"Karnataka",district:"Bengaluru Rural",service:"Factory Licence",stage:"Inspection Scheduled",ref:"KA-FL-2026-00128",next:"Prepare inspection pack"},
+{customer:"GreenLeaf Foods",industry:"Food & Restaurant",activity:"Restaurant / Café",state:"Karnataka",district:"Bengaluru Urban",service:"FSSAI Licence",stage:"Query Raised",ref:"KA-FSSAI-00912",next:"Respond to query"},
+{customer:"Sunrise Warehouse",industry:"Warehouse & Logistics",activity:"Warehouse",state:"Maharashtra",district:"Pune",service:"Fire NOC",stage:"Documents Pending",ref:"MH-FIRE-00481",next:"Request documents"},
+{customer:"Sri Lakshmi Packaging",industry:"Manufacturing",activity:"Packaging",state:"Tamil Nadu",district:"Krishnagiri",service:"Factory Licence",stage:"Ready for Submission",ref:"—",next:"Open government portal"}
+];
+let current={};let answers={};let selectedService=null;let selectedConfig=null;
+
+function $(id){return document.getElementById(id)}
+function go(page){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));$(page).classList.add("active");document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));$("title").textContent={dashboard:"Freelancer Dashboard",newcase:"New Customer / Case",cases:"My Cases",customers:"Customers",documents:"Documents",tracking:"Government Tracking",licences:"Licence Register",calendar:"Due Dates",catalog:"Industry / State Catalogue",services:"Licence Services",erp:"ERP Functional Design"}[page];$("crumb").textContent=$("title").textContent;if(page==="cases")renderCases();if(page==="customers")renderCustomers();if(page==="documents")renderDocs();if(page==="tracking")renderTracking();if(page==="licences")renderLicences();window.scrollTo(0,0)}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>go(b.dataset.page)));
+
+function fillSelect(id,arr,placeholder){let s=$(id);s.innerHTML=placeholder?`<option value="">${placeholder}</option>`:"";arr.forEach(x=>s.insertAdjacentHTML("beforeend",`<option value="${x}">${x}</option>`))}
+function renderCatalog(){
+ const cards=$("catalogCards"), samples=$("samples");
+ if(cards) cards.innerHTML=Object.entries(DATA.industries).map(([industry,activities])=>`<div class="card sample"><div class="title">${industry}</div><div class="muted" style="margin-top:8px">${activities.length} business activities configured</div><div style="margin-top:10px">${activities.slice(0,5).map(a=>`<span class="pill blue" style="margin:2px">${a}</span>`).join("")}</div></div>`).join("");
+ if(samples) samples.innerHTML=DATA.samples.map((x,i)=>`<div class="card sample" onclick="loadSample(${i})"><div class="title">${x[0]}</div><div class="muted">${x[1]} · ${x[2]}</div><div style="margin-top:8px"><span class="pill">${x[3]}</span> <span class="pill">${x[4]}</span></div><p class="muted" style="margin-top:8px">${x[5]}</p></div>`).join("");
+}
+function loadSample(i){const x=DATA.samples[i];if(!x)return;openNewCase();$("customerName").value=x[0];$("industry").value=x[1];$("activity").innerHTML=`<option value="${x[2]}">${x[2]}</option>`;$("activity").value=x[2];$("state").value=x[3];fillSelect("district",DATA.states[x[3]]||[],"Select district");$("district").value=x[4];$("site").value=x[5];updateHint();}
+function renderServices(){const el=$("serviceMasterRows");if(!el)return;el.innerHTML=DATA.services.map(s=>`<tr><td><b>${s.service}</b></td><td>${s.industry}</td><td>State / District</td><td>${s.authority}</td><td>${s.docs.length}</td><td>${s.qs.length} questions → Documents → Application → Government Tracking</td></tr>`).join("")}
+function renderTracking(){const el=$("trackingRows");if(!el)return;el.innerHTML=CASES.map(c=>`<tr><td><b>${c.customer}</b></td><td>${c.service}</td><td>${c.ref||"—"}</td><td><span class="pill blue">${c.stage}</span></td><td>${c.next}</td></tr>`).join("")}
+function renderLicences(){const el=$("licenceRows");if(!el)return;const rows=[{licence:"Factory Licence",customer:"ABC Auto Components",state:"Karnataka",until:"30 Sep 2027",status:"Active"},{licence:"FSSAI Licence",customer:"GreenLeaf Foods",state:"Karnataka",until:"15 Dec 2027",status:"Active"},{licence:"Fire NOC",customer:"Sunrise Warehouse",state:"Maharashtra",until:"20 Aug 2027",status:"Active"}];el.innerHTML=rows.map(r=>`<tr><td><b>${r.licence}</b></td><td>${r.customer}</td><td>${r.state}</td><td>${r.until}</td><td><span class="pill green">${r.status}</span></td><td><button class="btn sm" onclick="toast('Licence record opened')">Open</button></td></tr>`).join("")}
+function init(){fillSelect("industry",Object.keys(DATA.industries),"Select industry / business");fillSelect("state",Object.keys(DATA.states),"Select state");$("industry").addEventListener("change",()=>{let i=$("industry").value;fillSelect("activity",i?DATA.industries[i].map(x=>x):[],"Select business activity");$("district").innerHTML='<option value="">Select district</option>';$("businessHint").textContent="Now select the business activity and state. The service catalogue will narrow automatically."});$("state").addEventListener("change",()=>{let s=$("state").value;fillSelect("district",s?DATA.states[s]:[],"Select district");});$("activity").addEventListener("change",updateHint);$("state").addEventListener("change",updateHint);$("industry").addEventListener("change",updateHint);renderCatalog();renderServices();filterDocs();$("proposedDate").value=new Date().toISOString().slice(0,10)}
+function updateHint(){let i=$("industry").value,s=$("state").value,a=$("activity").value;if(i&&s&&a)$("businessHint").innerHTML=`<b>${a}</b> in <b>${$("district").value||"selected district"}</b>, ${s}. Click <b>Find Applicable Services</b> to load the configured licence workflow.`}
+function openNewCase(){resetWizard();go("newcase")}
+function resetWizard(){current={};answers={};selectedService=null;selectedConfig=null;["serviceStep","questionStep","documentStep","applicationStep","trackStep"].forEach(x=>$(x).classList.add("hide"));$("businessStep").classList.remove("hide");["customerName","site","contact","employees"].forEach(x=>$(x).value="");$("industry").value="";$("state").value="";$("district").innerHTML='<option value="">Select district</option>';$("activity").innerHTML='<option value="">Select business activity</option>';document.querySelectorAll(".step").forEach(x=>x.classList.remove("done","current"));$("st1").classList.add("current")}
+function loadServices(){let required=["customerName","site","industry","state","district","activity"];if(required.some(id=>!$(id).value)){toast("Please complete Customer, Industry, State, District, Activity and Site.");return}current={customer:$("customerName").value,industry:$("industry").value,state:$("state").value,district:$("district").value,activity:$("activity").value,site:$("site").value,contact:$("contact").value};let matches=DATA.services.filter(s=>(s.industry===current.industry&&s.activity===current.activity)||s.industry===current.industry);$("serviceContext").innerHTML=`<b>${current.customer}</b> · ${current.activity} · ${current.district}, ${current.state}`;$("serviceCards").innerHTML=matches.length?matches.map((s,i)=>`<div class="card sample" data-index="${DATA.services.indexOf(s)}" onclick="chooseService(${DATA.services.indexOf(s)})"><div class="title">${s.service}</div><div class="mini">${s.authority}</div><div style="margin-top:10px"><span class="pill blue">${s.docs.length} document groups</span> <span class="pill">${s.qs.length} questions</span></div><p class="muted" style="margin-top:9px">Portal: ${s.portal}</p></div>`).join(""):`<div class="notice">No configured sample service found for this combination. Add the service template in the catalogue before taking the case forward.</div>`;$("businessStep").classList.add("hide");$("serviceStep").classList.remove("hide");$("st1").classList.add("done");$("st2").classList.add("current")}
+function chooseService(index){selectedConfig=DATA.services[index];selectedService=selectedConfig.service;document.querySelectorAll(".sample").forEach(x=>x.classList.remove("selected"));document.querySelector(`.sample[data-index="${index}"]`).classList.add("selected");$("chosenService").classList.remove("hide");$("chosenService").innerHTML=`<b>${selectedService}</b><br><span class="muted">${selectedConfig.authority} · ${selectedConfig.portal}</span>`;$("toQuestions").disabled=false}
+function backToBusiness(){go("newcase");$("businessStep").classList.remove("hide");$("serviceStep").classList.add("hide")}
+function backToServices(){$("questionStep").classList.add("hide");$("serviceStep").classList.remove("hide");$("st3").classList.remove("current");$("st2").classList.add("current")}
+function loadQuestions(){if(!selectedConfig)return;answers={};$("questionContext").textContent=`${current.customer} · ${selectedService} · ${current.state}`;$("questionList").innerHTML=selectedConfig.qs.map((q,i)=>`<div class="question"><div class="q">${i+1}. ${q[0]}</div><div class="answers">${q[1].map(a=>`<button class="answer" onclick="setAnswer(${i},'${esc(a)}',this)">${a}</button>`).join("")}</div></div>`).join("");$("serviceStep").classList.add("hide");$("questionStep").classList.remove("hide");$("st2").classList.add("done");$("st3").classList.add("current")}
+function esc(s){return s.replaceAll("'","&#39;")}
+function setAnswer(i,a,el){answers[i]=a;el.parentElement.querySelectorAll(".answer").forEach(x=>x.classList.remove("selected"));el.classList.add("selected")}
+function evaluateRequirements(){if(Object.keys(answers).length<selectedConfig.qs.length){toast("Please answer every applicability question.");return}let extra=[];if(Object.values(answers).some(x=>x==="Yes"))extra.push("Additional supporting evidence based on the selected activity");if(selectedService==="Factory Licence"&&answers[2]==="Above 50 HP")extra.push("Detailed machinery / installed power schedule");if(selectedService==="FSSAI Licence"&&answers[3]==="Large")extra.push("Additional scale / capacity information");let docs=[...selectedConfig.docs,...extra];$("docContext").textContent=`${current.customer} · ${selectedService} · ${current.district}, ${current.state}`;$("resultBox").innerHTML=`<div class="notice success"><b>Likely applicable:</b> ${selectedService}<br><span class="muted">${selectedConfig.authority}. The assessment is configuration guidance, not a legal determination.</span></div>`;$("docChecklist").innerHTML=docs.map((d,i)=>`<div class="check"><input type="checkbox" ${i<Math.ceil(docs.length*.45)?"checked":""} onchange="updateReadiness()"><span>${d}</span><span class="status pill ${i<Math.ceil(docs.length*.45)?"green":"amber"}">${i<Math.ceil(docs.length*.45)?"Received":"Pending"}</span></div>`).join("");$("questionStep").classList.add("hide");$("documentStep").classList.remove("hide");$("st3").classList.add("done");$("st4").classList.add("current");updateReadiness()}
+function updateReadiness(){let all=[...document.querySelectorAll("#docChecklist input")],n=all.filter(x=>x.checked).length,p=Math.round(n/all.length*100);$("readinessBar").style.width=p+"%";$("readinessText").textContent=`${p}% ready · ${all.length-n} document(s) still pending`;document.querySelectorAll("#docChecklist .check").forEach((row,i)=>{let input=row.querySelector("input"),pill=row.querySelector(".status");pill.className="status pill "+(input.checked?"green":"amber");pill.textContent=input.checked?"Received":"Pending"})}
+function requestDocs(){toast(`Document request prepared for ${current.customer}`)}
+function prepareApplication(){let p=[...document.querySelectorAll("#docChecklist input")].filter(x=>!x.checked).length;if(p){toast(`Please complete the ${p} pending document(s), or intentionally proceed after review.`)}$("applicationSummary").innerHTML=[["Customer",current.customer],["Business",current.activity],["Location",`${current.district}, ${current.state}`],["Service",selectedService],["Authority",selectedConfig.authority],["Portal",selectedConfig.portal]].map(x=>`<div class="card"><div class="label">${x[0]}</div><b>${x[1]}</b></div>`).join("");$("authority").value=selectedConfig.authority;$("capacity").value=$("employees").value||"";$("applicationStep").classList.remove("hide");$("documentStep").classList.add("hide");$("st4").classList.add("done");$("st5").classList.add("current")}
+function backToDocuments(){$("applicationStep").classList.add("hide");$("documentStep").classList.remove("hide");$("st5").classList.remove("current");$("st4").classList.add("current")}
+function validateApplication(){let missing=[];if(!$("responsible").value)missing.push("Responsible / Occupier");if(!$("authority").value)missing.push("Authority");if(!$("proposedDate").value)missing.push("Date");if(missing.length){$("validationBox").innerHTML=`<div class="notice danger"><b>Cannot validate.</b> Complete: ${missing.join(", ")}</div>`;return}$("validationBox").innerHTML=`<div class="notice success"><b>Application validated.</b> Customer, location, service and authority are linked. Submission pack can now be prepared.</div><div class="actions"><button class="btn green" onclick="openTracking()">Prepare Government Submission →</button></div>`}
+function openTracking(){$("portalTitle").textContent=`Official portal — ${selectedService}`;$("portalText").textContent=`Configured portal reference: ${selectedConfig.portal}. Open the official authority website and complete its login/OTP/CAPTCHA/payment process.`;$("applicationStep").classList.add("hide");$("trackStep").classList.remove("hide");$("st5").classList.add("done");$("st6").classList.add("current")}
+function openPortal(){
+ const urls={
+  "FSSAI Licence":"https://foscos.fssai.gov.in/",
+  "Factory Licence":"https://www.nsws.gov.in/",
+  "Fire NOC":"https://www.nsws.gov.in/",
+  "Building / Local Development Approval":"https://www.nsws.gov.in/",
+  "Project / Environmental Permissions Review":"https://www.nsws.gov.in/",
+  "Mining / Quarry Permit Review":"https://www.nsws.gov.in/",
+  "Drug Manufacturing Licence":"https://www.nsws.gov.in/",
+  "Trade / Local Business Licence Review":"https://www.nsws.gov.in/"
+ };
+ window.open(urls[selectedService]||"https://www.nsws.gov.in/","_blank")
+}
+function saveTracking(){if(!$("govRef").value){toast("Enter the government application/reference number.");return}let c={...current,service:selectedService,stage:$("portalStatus").value,ref:$("govRef").value,next:$("portalStatus").value==="Approved"?"Record licence":"Track government response"};CASES.unshift(c);$("trackingResult").innerHTML=`<div class="notice success"><b>Government tracking saved.</b><br>${c.customer} · ${c.service} · ${c.ref}<br>Status: ${c.stage}</div>`;go("cases")}
+function backToQuestions(){$("documentStep").classList.add("hide");$("questionStep").classList.remove("hide");$("st4").classList.remove("current");$("st3").classList.add("current")}
+function renderCases(){$("caseRows").innerHTML=CASES.map((c,i)=>`<tr><td><b>${c.customer}</b><br><span class="muted">${c.district}</span></td><td>${c.activity}<br><span class="muted">${c.state}</span></td><td>${c.service}</td><td><span class="pill ${c.stage.includes("Query")?"red":c.stage.includes("Pending")?"amber":"blue"}">${c.stage}</span><br><span class="muted">${c.ref}</span></td><td>${c.next}</td><td><button class="btn sm" onclick="openCase(${i})">Open</button></td></tr>`).join("")}
+function openCase(i){let c=CASES[i];$("modalBox").innerHTML=`<h2>${c.customer}</h2><p class="muted">${c.activity} · ${c.district}, ${c.state}</p><div class="grid g3" style="margin-top:14px"><div class="card"><div class="label">Service</div><b>${c.service}</b></div><div class="card"><div class="label">Stage</div><b>${c.stage}</b></div><div class="card"><div class="label">Government Ref.</div><b>${c.ref}</b></div></div><div class="timeline" style="margin-top:18px"><div class="event"><b>Customer captured</b><br><span class="muted">Business + state + site</span></div><div class="event"><b>Service selected</b><br><span class="muted">${c.service}</span></div><div class="event"><b>Application / government stage</b><br><span class="muted">${c.stage}</span></div></div><div class="actions"><button class="btn" onclick="closeModal()">Close</button><button class="btn primary" onclick="closeModal();go('tracking')">Open Tracking</button></div>`;$("modal").classList.add("show")}
+function renderCustomers(){let uniq={};CASES.forEach(c=>uniq[c.customer]=c);$("customerRows").innerHTML=Object.values(uniq).map((c,i)=>`<tr><td><b>${c.customer}</b></td><td>${c.industry}</td><td>${c.state}</td><td>${CASES.filter(x=>x.customer===c.customer).length}</td><td><span class="pill green">Active</span></td><td><button class="btn sm" onclick="openCase(${CASES.indexOf(c)})">Open</button></td></tr>`).join("")}
+const DOCUMENTS=[
+ {name:"Factory Plan / Layout",type:"Technical Drawing",customer:"ABC Auto Components",service:"Factory Licence",state:"Karnataka",status:"Received",expiry:"—"},
+ {name:"Machinery & Power Schedule",type:"Technical Details",customer:"ABC Auto Components",service:"Factory Licence",state:"Karnataka",status:"Pending",expiry:"—"},
+ {name:"Occupier Identity Proof",type:"Identity",customer:"ABC Auto Components",service:"Factory Licence",state:"Karnataka",status:"Received",expiry:"15 Jun 2028"},
+ {name:"Food Business Premises Proof",type:"Premises",customer:"GreenLeaf Foods",service:"FSSAI Licence",state:"Karnataka",status:"Received",expiry:"—"},
+ {name:"Food Category Details",type:"Business Activity",customer:"GreenLeaf Foods",service:"FSSAI Licence",state:"Karnataka",status:"Query / Replace",expiry:"—"},
+ {name:"Building Plan",type:"Technical Drawing",customer:"Sunrise Warehouse",service:"Fire NOC",state:"Maharashtra",status:"Pending",expiry:"—"},
+ {name:"Fire Equipment Details",type:"Safety Evidence",customer:"Sunrise Warehouse",service:"Fire NOC",state:"Maharashtra",status:"Received",expiry:"—"},
+ {name:"Factory Layout",type:"Technical Drawing",customer:"Sri Lakshmi Packaging",service:"Factory Licence",state:"Tamil Nadu",status:"Received",expiry:"—"},
+ {name:"Manufacturing Process",type:"Process Document",customer:"Sri Lakshmi Packaging",service:"Factory Licence",state:"Tamil Nadu",status:"Pending",expiry:"—"},
+ {name:"Company Incorporation Proof",type:"Company",customer:"MediCore Labs",service:"Drug Manufacturing Licence",state:"Maharashtra",status:"Received",expiry:"—"}
+];
+function filterDocs(){
+ const st=$("docFilterState")?.value||"", ss=$("docFilterStatus")?.value||"";
+ const rows=DOCUMENTS.filter(d=>(!st||d.state===st)&&(!ss||d.status===ss));
+ $("documentRegister").innerHTML=rows.length?`<table class="table"><thead><tr><th>Document</th><th>Type</th><th>Customer / Service</th><th>State</th><th>Status</th><th>Expiry</th><th>Action</th></tr></thead><tbody>${rows.map((d,i)=>`<tr><td><b>${d.name}</b></td><td>${d.type}</td><td><b>${d.customer}</b><br><span class="muted">${d.service}</span></td><td>${d.state}</td><td><span class="pill ${d.status==="Received"?"green":d.status==="Pending"?"amber":"red"}">${d.status}</span></td><td>${d.expiry}</td><td><button class="btn sm" onclick="openDocument('${d.name.replaceAll("'","&#39;")}')">${d.status==="Received"?"View":"Request"}</button></td></tr>`).join("")}</tbody></table>`:`<div class="notice">No documents match the selected filters.</div>`;
+}
+function openDocument(name){
+ const d=DOCUMENTS.find(x=>x.name===name);
+ if(!d)return;
+ $("modalBox").innerHTML=`<h2>${d.name}</h2><p class="muted">${d.customer} · ${d.service} · ${d.state}</p>
+ <div class="grid g3" style="margin-top:15px">
+  <div class="card"><div class="label">Document Type</div><b>${d.type}</b></div>
+  <div class="card"><div class="label">Status</div><span class="pill ${d.status==="Received"?"green":d.status==="Pending"?"amber":"red"}">${d.status}</span></div>
+  <div class="card"><div class="label">Expiry</div><b>${d.expiry}</b></div>
+ </div>
+ <div class="notice" style="margin-top:15px"><b>Linked records</b><br>Customer: ${d.customer}<br>Licence Service: ${d.service}<br>State: ${d.state}<br>Application / Case: linked to the same customer case.</div>
+ <div class="actions"><button class="btn" onclick="closeModal()">Close</button><button class="btn primary" onclick="toast('${d.status==="Received"?"Document opened":"Document request sent"}');closeModal()"> ${d.status==="Received"?"Open Document":"Request Document"} </button></div>`;
+ $("modal").classList.add("show");
+}
+function renderDocs(){filterDocs()}
+function openLicenceMaster(){
+ $("modalBox").innerHTML=`<h2>Licence Master — Factory Licence</h2>
+ <p class="muted">Example configured master. In the production system this becomes a versioned master record by Industry + State + Authority + Service.</p>
+ <div class="formgrid" style="margin-top:15px">
+  <div class="field"><label>Licence / Approval Name</label><input value="Factory Licence"></div>
+  <div class="field"><label>Licence Category</label><select><option>Factory / Labour</option><option>Food</option><option>Fire</option><option>Mining</option><option>Drug</option><option>Local Authority</option></select></div>
+  <div class="field"><label>Industry</label><select><option>Manufacturing</option><option>Food</option><option>Construction</option><option>Warehouse</option><option>Mining</option></select></div>
+  <div class="field"><label>State</label><select><option>Karnataka</option><option>Tamil Nadu</option><option>Maharashtra</option><option>Telangana</option></select></div>
+  <div class="field"><label>Authority</label><input value="State Factory / Labour Authority"></div>
+  <div class="field"><label>Jurisdiction Level</label><select><option>State + District</option><option>Central</option><option>Municipal</option><option>State</option></select></div>
+  <div class="field"><label>Application Type</label><select><option>New</option><option>Renewal</option><option>Amendment</option><option>Transfer</option><option>Surrender / Closure</option></select></div>
+  <div class="field"><label>Validity</label><input value="As per applicable authority"></div>
+  <div class="field"><label>Renewal Lead Days</label><input value="90"></div>
+  <div class="field"><label>Official Portal URL</label><input value="https://www.nsws.gov.in/"></div>
+  <div class="field"><label>Legal / Source Reference</label><input value="Authority rules / current notification"></div>
+  <div class="field"><label>Master Version</label><input value="2026.10"></div>
+ </div>
+ <h3 style="margin-top:18px">Linked child records</h3>
+ <div class="grid g4">
+  <div class="card"><b>Applicability Rules</b><br><span class="muted">Questions + answer rules</span></div>
+  <div class="card"><b>Required Documents</b><br><span class="muted">Document types + mandatory flag</span></div>
+  <div class="card"><b>Process Steps</b><br><span class="muted">Scrutiny → Query → Inspection → Decision</span></div>
+  <div class="card"><b>Conditions / Returns</b><br><span class="muted">Post-licence obligations</span></div>
+ </div>
+ <h3 style="margin-top:18px">End-user smart actions</h3>
+ <div class="actions" style="justify-content:flex-start;flex-wrap:wrap">
+  <button class="btn sm" onclick="toast('Applicability questions opened')">Questions</button>
+  <button class="btn sm" onclick="toast('Document requirements opened')">Documents</button>
+  <button class="btn sm" onclick="toast('Application template opened')">Application</button>
+  <button class="btn sm" onclick="toast('Government portal opened')">Official Portal</button>
+  <button class="btn sm" onclick="toast('Licence conditions opened')">Conditions</button>
+  <button class="btn sm" onclick="toast('Renewal rules opened')">Renewal</button>
+ </div>
+ <div class="actions"><button class="btn" onclick="closeModal()">Close</button></div>`;
+ $("modal").classList.add("show")
+}
+function closeModal(){$("modal").classList.remove("show")}
+function toast(msg){let t=$("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2300)}
+$("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+init();
+</script>
+</body></html>
